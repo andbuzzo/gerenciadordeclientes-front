@@ -22,6 +22,8 @@ import { FormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { CidadeDeleteComponent } from './components/views/cidade/cidade-delete/cidade-delete.component';
+import { CidadeUpdateComponent } from './components/views/cidade/cidade-update/cidade-update.component';
 
 
 
@@ -38,7 +40,9 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     NavComponent,
     HomeComponent,
     CidadeReadComponent,
-    CidadeCreateComponent
+    CidadeCreateComponent,
+    CidadeDeleteComponent,
+    CidadeUpdateComponent
   ],
   
   imports: [

@@ -21,9 +21,25 @@ findAll():Observable<Cidade[]> {
   return this.http.get<Cidade[]>(url)
 }
 
+findById(id: String):Observable<Cidade>{
+  const url = `${this.baseUrl}/cidades/${id}`
+  return this.http.get<Cidade>(url)
+
+}
+
 create(cidade: Cidade): Observable<Cidade>{
   const url = `${this.baseUrl}/cidades`
   return this.http.post<Cidade>(url, cidade);
+}
+
+delete(id: String):Observable<void>{
+  const url = `${this.baseUrl}/cidades/${id}`
+  return this.http.delete<void>(url)
+}
+
+update(cidade: Cidade):Observable<void>{
+  const url = `${this.baseUrl}/cidades/${cidade.id}`
+  return this.http.put<void>(url, cidade)
 }
 
 mensagem(msg: String): void{

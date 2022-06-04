@@ -1,0 +1,19 @@
+<form>
+    <h1>DELETANDO CIDADE</h1>
+
+    <mat-form-field class="form">
+        <mat-label>Nome</mat-label>
+        <input matInput [(ngModel)]="cidade.nome" type="text" name="nome" disabled>
+    </mat-form-field>
+
+    <mat-form-field class="form">
+        <mat-label>UF</mat-label>
+        <input matInput [(ngModel)]="cidade.uf" type="text" name="uf" disabled>
+    </mat-form-field>
+
+    <div class="buttons">
+        <button (click)="delete()" class="mat-elevation-z8"  mat-stroked-button color="primary">DELETAR</button>
+        <button (click)="cancel()" class="mat-elevation-z8"  mat-stroked-button color="warn">CANCELAR</button>
+    </div>
+
+</form>
