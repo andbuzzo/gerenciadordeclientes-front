@@ -26,7 +26,7 @@ export class CidadeCreateComponent implements OnInit {
         this.router.navigate(['cidades'])
         this.service.mensagem('Cidade adicionada com sucesso')
       },
-      error: (e) => this.service.mensagem('Erro ao criar nova cidade: ' + e)
+      error: () => this.service.mensagem('Erro ao criar nova cidade, verifique todos os campos e tente novamente!')
     })
   }
 

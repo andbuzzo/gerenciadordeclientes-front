@@ -28,7 +28,7 @@
         <ng-container matColumnDef="clientes">
           <th mat-header-cell *matHeaderCellDef> CLIENTES </th>
           <td mat-cell *matCellDef="let row">
-            <a class="clientes" href="#">
+            <a class="clientes" routerLink="clientes/cidades/ {{ row.id }}">
               <i class="clientes" class="material-icons">people</i>
             </a>
           </td>

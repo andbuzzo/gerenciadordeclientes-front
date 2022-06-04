@@ -24,6 +24,11 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { CidadeDeleteComponent } from './components/views/cidade/cidade-delete/cidade-delete.component';
 import { CidadeUpdateComponent } from './components/views/cidade/cidade-update/cidade-update.component';
+import { ClienteReadCidadeComponent } from './components/views/cliente/cliente-read-cidade/cliente-read-cidade.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import { ClienteCreateComponent } from './components/views/cliente/cliente-create/cliente-create.component';
+import { ClienteReadComponent } from './components/views/cliente/cliente-read/cliente-read.component';
+import {MatSelectModule} from '@angular/material/select';
 
 
 
@@ -42,7 +47,10 @@ import { CidadeUpdateComponent } from './components/views/cidade/cidade-update/c
     CidadeReadComponent,
     CidadeCreateComponent,
     CidadeDeleteComponent,
-    CidadeUpdateComponent
+    CidadeUpdateComponent,
+    ClienteReadCidadeComponent,
+    ClienteCreateComponent,
+    ClienteReadComponent
   ],
   
   imports: [
@@ -60,7 +68,9 @@ import { CidadeUpdateComponent } from './components/views/cidade/cidade-update/c
     FormsModule,
     MatInputModule,
     MatFormFieldModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatTabsModule,
+    MatSelectModule
     
   ],
   providers: [],

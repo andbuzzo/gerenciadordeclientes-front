@@ -1,0 +1,61 @@
+<form>
+    <h1>CRIANDO NOVO CLIENTE</h1>
+
+
+    <mat-tab-group mat-align-tabs="center">
+        <mat-tab label="Dados Pessoais">
+            <mat-form-field class="form">
+                <mat-label>NOME</mat-label>
+                <input matInput  type="text" name="nome" placeholder="Digite o nome">
+            </mat-form-field>
+            <mat-form-field class="form">
+                <mat-label>CPF/CNPJ</mat-label>
+                <input matInput type="text" [mask]="getCpfCnpjMask()" formControlName="cpf_cnpj" [(ngModel)]="cpf_cnpj" placeholder="Digite o CPF ou CNPJ">
+            </mat-form-field>
+        </mat-tab>
+        <mat-tab label="Dados de Contato">
+            <mat-form-field class="form">
+                <mat-label>Endereço</mat-label>
+                <input matInput  type="text" name="nome" placeholder="Digite seu Endereço">
+            </mat-form-field>
+            <mat-form-field class="form">
+                <mat-label>Número</mat-label>
+                <input matInput  type="text" name="number" placeholder="Digite o Número do endereço">
+            </mat-form-field>
+            <mat-form-field class="form">
+                <mat-label>Bairro</mat-label>
+                <input matInput  type="text" name="nome" placeholder="Digite o bairro">
+            </mat-form-field>
+            <mat-form-field class="form">
+                <mat-label>CEP</mat-label>
+                <input matInput  type="text" name="nome" placeholder="Digite o cep">
+            </mat-form-field>
+
+            <mat-form-field class="select" appearance="fill">
+                <mat-label>SELECIONE A CIDADE</mat-label>
+                <mat-select [(ngModel)]="id_cidade" name="cidades">
+                  <mat-option *ngFor="let cidade of cidades" [value]="cidade.id">
+                    {{cidade.nome}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+
+              <mat-form-field class="form">
+                <mat-label>TELEFONE</mat-label>
+                <input matInput  type="text" name="nome" placeholder="Digite o telefone">
+            </mat-form-field>
+
+            <mat-form-field class="form">
+                <mat-label>E-MAIL</mat-label>
+                <input matInput  type="text" name="nome" placeholder="Digite o nome e-mail">
+            </mat-form-field>
+            </mat-tab>
+        
+      </mat-tab-group>
+
+    <div class="buttons">
+        <button class="mat-elevation-z8"  mat-stroked-button color="primary">CRIAR</button>
+        <button class="mat-elevation-z8"  mat-stroked-button color="warn">CANCELAR</button>
+    </div>
+
+</form>
