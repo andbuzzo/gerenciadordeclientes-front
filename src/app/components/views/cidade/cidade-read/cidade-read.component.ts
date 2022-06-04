@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Cidade } from '../cidade.model';
 import { CidadeService } from '../cidade.service';
 
@@ -11,9 +12,9 @@ export class CidadeReadComponent implements OnInit {
 
   cidade: Cidade[] = []
 
-  displayedColumns: string[] = ['id', 'nome', 'uf', 'acoes'];
+  displayedColumns: string[] = ['id', 'nome', 'uf', 'clientes', 'acoes'];
 
-  constructor( private service: CidadeService) { }
+  constructor( private service: CidadeService, private router: Router) { }
 
   ngOnInit(): void {
     this.findAll();
@@ -27,6 +28,11 @@ export class CidadeReadComponent implements OnInit {
       }
     })
   }
+
+  navegarParaCidadeCreate(): void{
+    this.router.navigate(["cidades/create"])
+  }
+
   
 
 }

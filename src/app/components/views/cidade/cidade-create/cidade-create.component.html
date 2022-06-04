@@ -1,0 +1,19 @@
+<form>
+    <h1>CRIANDO NOVA CIDADE</h1>
+
+    <mat-form-field class="form">
+        <mat-label>Nome</mat-label>
+        <input matInput [(ngModel)]="cidade.nome" type="text" name="nome" placeholder="Digite o nome da cidade">
+    </mat-form-field>
+
+    <mat-form-field class="form">
+        <mat-label>UF</mat-label>
+        <input matInput [(ngModel)]="cidade.uf" type="text" name="uf" placeholder="Digite a sigla do estado">
+    </mat-form-field>
+
+    <div class="buttons">
+        <button class="mat-elevation-z8" (click)="create()" mat-stroked-button color="primary">CRIAR</button>
+        <button class="mat-elevation-z8" (click)="cancel()" mat-stroked-button color="warn">CANCELAR</button>
+    </div>
+
+</form>

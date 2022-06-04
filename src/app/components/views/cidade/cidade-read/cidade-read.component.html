@@ -4,6 +4,9 @@
         <h1>Cidades</h1>
     </div>
 
+    <button class="mat-elevation-z8" (click)="navegarParaCidadeCreate()" mat-stroked-button color="primary">NOVA CIDADE</button>
+
+
 <div class="mat-elevation-z8 content-table">
     <table class="table" mat-table [dataSource]="cidade">
 
@@ -22,9 +25,25 @@
           <td mat-cell *matCellDef="let row"> {{ row.uf }} </td>
         </ng-container>
       
+        <ng-container matColumnDef="clientes">
+          <th mat-header-cell *matHeaderCellDef> CLIENTES </th>
+          <td mat-cell *matCellDef="let row">
+            <a class="clientes" href="#">
+              <i class="clientes" class="material-icons">people</i>
+            </a>
+          </td>
+        </ng-container>
+
         <ng-container matColumnDef="acoes">
-          <th mat-header-cell *matHeaderCellDef> AÇÕES </th>
-          <td mat-cell *matCellDef="let row"> </td>
+          <th class="mat-header" mat-header-cell *matHeaderCellDef> AÇÕES </th>
+          <td mat-cell *matCellDef="let row">
+            <a class="edit" href="#">
+              <i class="material-icons">edit</i>
+            </a>
+            <a class="delete" href="#">
+              <i class="material-icons">delete</i>
+            </a>
+          </td>
         </ng-container>
       
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
