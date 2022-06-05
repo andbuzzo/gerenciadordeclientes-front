@@ -24,6 +24,11 @@ export class ClienteService {
     return this.http.get<Cliente[]>(url)
   }
 
+  findAllDesativados():Observable<Cliente[]>{
+    const url =`${this.baseUrl}/clientes/desativados`
+    return this.http.get<Cliente[]>(url)
+  }
+
   findByCpfouCnpj(cpfOuCnpj: String):Observable<Cliente>{
     const url=`${this.baseUrl}/clientes/c/${cpfOuCnpj}`
     return this.http.get<Cliente>(url)

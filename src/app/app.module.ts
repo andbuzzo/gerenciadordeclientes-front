@@ -35,6 +35,7 @@ import { ClienteReadFullComponent } from './components/views/cliente/cliente-rea
 import { ClienteUpdateComponent } from './components/views/cliente/cliente-update/cliente-update.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { ClienteReadDesativadosComponent } from './components/views/cliente/cliente-read-desativados/cliente-read-desativados.component';
 
 
 
@@ -56,7 +57,8 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     ClienteReadComponent,
     ClienteReadCpfoucnpjComponent,
     ClienteReadFullComponent,
-    ClienteUpdateComponent
+    ClienteUpdateComponent,
+    ClienteReadDesativadosComponent
   ],
   
   imports: [

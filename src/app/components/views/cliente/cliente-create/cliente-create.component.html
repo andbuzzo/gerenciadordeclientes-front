@@ -40,8 +40,7 @@
                     {{cidade.nome}}
                   </mat-option>
                 </mat-select>
-              </mat-form-field>
-              <p>{{cidades}}</p>
+            </mat-form-field>
               <mat-form-field class="form">
                 <mat-label>TELEFONE</mat-label>
                 <input matInput [(ngModel)]="cliente.telefone" type="text" name="telefone" mask="(00)00000-0000" placeholder="Digite o telefone">
@@ -57,7 +56,7 @@
 
     <div class="buttons">
         <button [disabled]="getMessage()" class="mat-elevation-z8" (click)="create()" mat-stroked-button color="primary">CRIAR</button>
-        <button class="mat-elevation-z8"  mat-stroked-button color="warn">CANCELAR</button>
+        <button class="mat-elevation-z8" routerLink="/clientes"  mat-stroked-button color="warn">CANCELAR</button>
     </div>
 
 </form>

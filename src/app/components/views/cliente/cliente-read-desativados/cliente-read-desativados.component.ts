@@ -4,11 +4,11 @@ import { Cliente } from '../Cliente.model';
 import { ClienteService } from '../cliente.service';
 
 @Component({
-  selector: 'app-cliente-read',
-  templateUrl: './cliente-read.component.html',
-  styleUrls: ['./cliente-read.component.css']
+  selector: 'app-cliente-read-desativados',
+  templateUrl: './cliente-read-desativados.component.html',
+  styleUrls: ['./cliente-read-desativados.component.css']
 })
-export class ClienteReadComponent implements OnInit {
+export class ClienteReadDesativadosComponent implements OnInit {
 
   displayedColumns: string[] = ['id', 'cpfOuCnpj', 'nome', 'acoes'];
   cpfOuCnpj : String =''
@@ -26,7 +26,7 @@ export class ClienteReadComponent implements OnInit {
   }
 
   findAll():void{
-    this.clienteService.findAll().subscribe({
+    this.clienteService.findAllDesativados().subscribe({
       next: (resposta)=>{
         this.clientes = resposta;
       }
@@ -50,7 +50,8 @@ export class ClienteReadComponent implements OnInit {
   }
 
   navegarParaPesquisarClientesDesativados():void{
-    this.router.navigate(['/read/desativados'])
+    this.router.navigate(['clientes/read/desativados'])
   }
   
+
 }

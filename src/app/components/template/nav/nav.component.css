@@ -2,5 +2,9 @@
     height: 85%;
 }
 i{
-    padding-right: 0.5rem;
+    padding-right: 2rem;
+}
+
+.sidenav{
+    width: 10%;
 }

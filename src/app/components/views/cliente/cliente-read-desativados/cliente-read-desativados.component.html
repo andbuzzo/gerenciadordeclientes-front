@@ -1,19 +1,10 @@
 <div class="content">
 
     <div class="title">
-        <h1>Clientes</h1>
+        <h1>Clientes Desativados</h1>
     </div>
-    
+
     <button class="mat-elevation-z8" (click)="navegarParaCriarCliente()"  mat-stroked-button color="primary">NOVO CLIENTE</button>
-    <button class="btnDesativados" class="mat-elevation-z8" (click)="navegarParaPesquisarClientesDesativados()"  mat-stroked-button color="primary">CLIENTES DESATIVADOS</button>
-    <mat-form-field class="btnPesquisar">
-      <mat-label>PESQUISAR CPF/CNPJ</mat-label>
-      <input matInput type="text" name="pesquisa" [(ngModel)]="pesquisa" mask="000.000.000-00||00.000.000/0000-00" placeholder="Digite o CPF ou CNPJ">
-  </mat-form-field>
-    <a class="lupa" (click)="navegarParaPesquisarCliente()">
-      <i class="material-icons" >search</i>
-    </a>
-   
 
 <div class="mat-elevation-z8 content-table">
     <table class="table" mat-table [dataSource]="clientes" >
@@ -38,7 +29,7 @@
         <ng-container matColumnDef="acoes">
           <th class="mat-header" mat-header-cell *matHeaderCellDef> AÇÕES </th>
           <td mat-cell *matCellDef="let row">
-            <a class="visibility" routerLink="read/full/ {{ row.id }}" >
+            <a class="visibility" routerLink="/clientes/read/full/ {{ row.id }}" >
                 <i class="material-icons">visibility</i>
               </a>
             <a class="edit" routerLink="/clientes/update/ {{ row.id }}">

@@ -7,6 +7,7 @@ import { CidadeUpdateComponent } from './components/views/cidade/cidade-update/c
 import { ClienteCreateComponent } from './components/views/cliente/cliente-create/cliente-create.component';
 import { ClienteReadCidadeComponent } from './components/views/cliente/cliente-read-cidade/cliente-read-cidade.component';
 import { ClienteReadCpfoucnpjComponent } from './components/views/cliente/cliente-read-cpfoucnpj/cliente-read-cpfoucnpj.component';
+import { ClienteReadDesativadosComponent } from './components/views/cliente/cliente-read-desativados/cliente-read-desativados.component';
 import { ClienteReadFullComponent } from './components/views/cliente/cliente-read-full/cliente-read-full.component';
 import { ClienteReadComponent } from './components/views/cliente/cliente-read/cliente-read.component';
 import { ClienteUpdateComponent } from './components/views/cliente/cliente-update/cliente-update.component';
@@ -57,7 +58,12 @@ const routes: Routes = [
   {
     path:'clientes/update/:id',
     component: ClienteUpdateComponent
+  },
+  {
+    path:'read/desativados',
+    component: ClienteReadDesativadosComponent
   }
+  
   
 ];
 
