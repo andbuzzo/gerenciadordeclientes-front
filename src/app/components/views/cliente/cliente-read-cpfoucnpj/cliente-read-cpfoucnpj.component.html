@@ -1,0 +1,61 @@
+<form>
+  <h1>VISUALIZAR CLIENTE</h1>
+
+
+  <mat-tab-group mat-align-tabs="center">
+      <mat-tab label="Dados Pessoais">
+          <mat-form-field class="form">
+              <mat-label>NOME</mat-label>
+              <input matInput [(ngModel)]="cliente.nome"  type="text" name="nome" disabled>
+          </mat-form-field>
+          <mat-form-field class="form">
+              <mat-label>CPF/CNPJ</mat-label>
+              <input matInput [(ngModel)]="cliente.cpfOuCnpj" type="text" name="cpfOuCnpj" disabled>
+          </mat-form-field>
+          <mat-form-field class="form">
+              <mat-label>STATUS</mat-label>
+              <input matInput [(ngModel)]="cliente_status" type="text" name="ativo" disabled>
+          </mat-form-field>
+         
+      </mat-tab>
+      <mat-tab label="Dados de Contato">
+          <mat-form-field class="form">
+              <mat-label>ENDEREÇO</mat-label>
+              <input matInput [(ngModel)]="cliente.endereco"  type="text" name="endereco" disabled>
+          </mat-form-field>
+          <mat-form-field class="form">
+              <mat-label>NÚMERO</mat-label>
+              <input matInput [(ngModel)]="cliente.numero"  type="text" name="numero" disabled>
+          </mat-form-field>
+          <mat-form-field class="form">
+              <mat-label>BAIRRO</mat-label>
+              <input matInput [(ngModel)]="cliente.bairro"  type="text" name="bairro" disabled>
+          </mat-form-field>
+          <mat-form-field class="form">
+              <mat-label>CEP</mat-label>
+              <input matInput [(ngModel)]="cliente.cep"  type="text" name="cep" disabled>
+          </mat-form-field>
+
+          <mat-form-field class="form">
+              <mat-label>CIDADE</mat-label>
+              <input matInput [(ngModel)]="objCidade.nome" type="text" name="cidade" disabled>
+          </mat-form-field>
+
+          <mat-form-field class="form">
+              <mat-label>UF</mat-label>
+              <input matInput [(ngModel)]="objCidade.uf" type="text" name="uf" disabled>
+          </mat-form-field>
+
+            <mat-form-field class="form">
+              <mat-label>TELEFONE</mat-label>
+              <input matInput [(ngModel)]="cliente.telefone"  type="text" name="telefone" disabled>
+          </mat-form-field>
+
+          <mat-form-field class="form">
+              <mat-label>E-MAIL</mat-label>
+              <input matInput [(ngModel)]="cliente.email"  type="text" name="email" disabled>
+          </mat-form-field>
+          </mat-tab>
+      
+    </mat-tab-group>
+</form>

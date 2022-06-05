@@ -18,7 +18,7 @@ import { CidadeReadComponent } from './components/views/cidade/cidade-read/cidad
 import {MatTableModule} from '@angular/material/table';
 import {MatButtonModule} from '@angular/material/button';
 import { CidadeCreateComponent } from './components/views/cidade/cidade-create/cidade-create.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
@@ -29,9 +29,12 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { ClienteCreateComponent } from './components/views/cliente/cliente-create/cliente-create.component';
 import { ClienteReadComponent } from './components/views/cliente/cliente-read/cliente-read.component';
 import {MatSelectModule} from '@angular/material/select';
-
-
-
+import { NgxMaskModule, IConfig } from 'ngx-mask';
+import { ClienteReadCpfoucnpjComponent } from './components/views/cliente/cliente-read-cpfoucnpj/cliente-read-cpfoucnpj.component';
+import { ClienteReadFullComponent } from './components/views/cliente/cliente-read-full/cliente-read-full.component';
+import { ClienteUpdateComponent } from './components/views/cliente/cliente-update/cliente-update.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 
 
@@ -50,7 +53,10 @@ import {MatSelectModule} from '@angular/material/select';
     CidadeUpdateComponent,
     ClienteReadCidadeComponent,
     ClienteCreateComponent,
-    ClienteReadComponent
+    ClienteReadComponent,
+    ClienteReadCpfoucnpjComponent,
+    ClienteReadFullComponent,
+    ClienteUpdateComponent
   ],
   
   imports: [
@@ -70,10 +76,18 @@ import {MatSelectModule} from '@angular/material/select';
     MatFormFieldModule,
     MatSnackBarModule,
     MatTabsModule,
-    MatSelectModule
+    MatSelectModule,
+    NgxMaskModule.forRoot(),
+    ReactiveFormsModule,
+    MatCheckboxModule,
+    MatSlideToggleModule
+    
     
   ],
   providers: [],
   bootstrap: [AppComponent]
+
+  
 })
 export class AppModule { }
+

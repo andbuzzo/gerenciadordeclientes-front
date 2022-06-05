@@ -1,14 +1,15 @@
+import { Cidade } from "../cidade/cidade.model";
+
 export interface Cliente{
     id?:String,
     cpfOuCnpj:String,
     nome:String,
     endereco:String,
-    numer:String,
+    numero:String,
     bairro:String,
     cep:String,
-    cidade:String,
     telefone:String,
     email:String,
-    IdAtivo: string
-
+    ativo: boolean,
+    cidade: number
 }

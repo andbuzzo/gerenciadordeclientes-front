@@ -33,6 +33,6 @@ export class CidadeReadComponent implements OnInit {
     this.router.navigate(["cidades/create"])
   }
 
-  
+ 
 
 }

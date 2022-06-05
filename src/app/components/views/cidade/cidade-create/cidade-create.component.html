@@ -3,16 +3,18 @@
 
     <mat-form-field class="form">
         <mat-label>Nome</mat-label>
-        <input matInput [(ngModel)]="cidade.nome" type="text" name="nome" placeholder="Digite o nome da cidade">
+        <input matInput  [(ngModel)]="cidade.nome" required [formControl]="nome" type="text" name="nome" placeholder="Digite o nome da cidade" maxlength="100">
+        <mat-error *ngIf="nome.invalid">{{ getMessage() }}</mat-error>
     </mat-form-field>
 
     <mat-form-field class="form">
         <mat-label>UF</mat-label>
-        <input matInput [(ngModel)]="cidade.uf" type="text" name="uf" placeholder="Digite a sigla do estado" maxlength="2" >
+        <input matInput [(ngModel)]="cidade.uf" required [formControl]="uf" required type="text" name="uf" placeholder="Ex. André" maxlength="2">
+        <mat-error *ngIf="uf.invalid">{{ getMessage() }}</mat-error>
     </mat-form-field>
 
     <div class="buttons">
-        <button class="mat-elevation-z8" (click)="create()" mat-stroked-button color="primary">CRIAR</button>
+        <button [disabled]="getMessage()" class="mat-elevation-z8" (click)="create()" mat-stroked-button color="primary">CRIAR</button>
         <button class="mat-elevation-z8" (click)="cancel()" mat-stroked-button color="warn">CANCELAR</button>
     </div>
 

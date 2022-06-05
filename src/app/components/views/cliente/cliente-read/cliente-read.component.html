@@ -6,6 +6,13 @@
 
     <button class="mat-elevation-z8" (click)="navegarParaCriarCliente()"  mat-stroked-button color="primary">NOVO CLIENTE</button>
 
+    <mat-form-field class="btnPesquisar">
+      <mat-label>PESQUISAR CPF/CNPJ</mat-label>
+      <input matInput type="text" name="pesquisa" [(ngModel)]="pesquisa" mask="000.000.000-00||00.000.000/0000-00" placeholder="Digite o CPF ou CNPJ">
+  </mat-form-field>
+    <a class="lupa" (click)="navegarParaPesquisarCliente()">
+      <i class="material-icons" >search</i>
+    </a>
 
 <div class="mat-elevation-z8 content-table">
     <table class="table" mat-table [dataSource]="clientes" >
@@ -17,8 +24,8 @@
         </ng-container>
       
         <ng-container matColumnDef="cpfOuCnpj">
-          <th mat-header-cell *matHeaderCellDef> CPF/CNPJ </th>
-          <td mat-cell *matCellDef="let row"> {{ row.cpfOuCnpj }} </td>
+          <th mat-header-cell  *matHeaderCellDef> CPF/CNPJ </th>
+          <td mat-cell  *matCellDef="let row"> {{ row.cpfOuCnpj }} </td>
         </ng-container>
       
         <ng-container matColumnDef="nome">
@@ -26,13 +33,14 @@
           <td mat-cell *matCellDef="let row"> {{ row.nome }} </td>
         </ng-container>
 
+        
         <ng-container matColumnDef="acoes">
           <th class="mat-header" mat-header-cell *matHeaderCellDef> AÇÕES </th>
           <td mat-cell *matCellDef="let row">
-            <a class="visibility" >
+            <a class="visibility" routerLink="read/full/ {{ row.id }}" >
                 <i class="material-icons">visibility</i>
               </a>
-            <a class="edit" >
+            <a class="edit" routerLink="/clientes/update/ {{ row.id }}">
               <i class="material-icons">edit</i>
             </a>
            </td>

@@ -24,15 +24,30 @@ button {
     width: 100%;
 }
 
+.clientes{
+    color: rgb(130, 130, 209);
+    margin-left: .6rem;
+}
+
 .edit{
     color: yellow;
 }
 
-.visibility{
-    color: blue;
+.delete{
+    color: rgb(202, 30, 30);
+    margin-left: .5rem;
 }
 
 .mat-header{
     width: 5rem;
 }
 
+.btnPesquisar{
+    margin-left: 2rem;
+}
+
+.lupa {
+    color: rgb(81, 88, 116);
+    vertical-align: middle;
+    
+}

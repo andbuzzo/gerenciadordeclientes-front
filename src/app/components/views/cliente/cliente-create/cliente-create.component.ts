@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Cidade } from '../../cidade/cidade.model';
 import { CidadeService } from '../../cidade/cidade.service';
+import { Cliente } from '../Cliente.model';
+import { ClienteService } from '../cliente.service';
 
 @Component({
   selector: 'app-cliente-create',
@@ -9,26 +13,71 @@ import { CidadeService } from '../../cidade/cidade.service';
 })
 export class ClienteCreateComponent implements OnInit {
 
+  cliente: Cliente ={
+    id:'',
+    cpfOuCnpj:'',
+    nome:'',
+    ativo: true,
+    bairro:'',
+    cep:'',
+    email:'',
+    endereco: '',
+    numero:'',
+    telefone:'',
+    cidade: 0
+  }
+
+  
+
   cidades: Cidade[] = []
-  id_cidade: String =''
-  cpf_cnpj: String =''
-  constructor(private cidadeService: CidadeService) { }
+
+  id_cidade: String = ''
+
+  nome = new FormControl('', [Validators.minLength(5), Validators.maxLength(100)])
+  cpfOuCnpj = new FormControl('', [Validators.minLength(10),Validators.maxLength(18)])
+  
+  constructor(private cidadeService: CidadeService, private clienteService: ClienteService, private router: Router, private activeRouter: ActivatedRoute) { }
 
   ngOnInit(): void {
+  
+   this.preencherSelect()
+
+  }
+
+
+create():void{
+  this.clienteService.create(this.cliente).subscribe({
+    next:(resposta) =>{ 
+      console.log(resposta)
+      console.log(resposta)
+      this.cliente = resposta
+    },
+    complete:() => {
+      this.router.navigate(['clientes'])
+      this.clienteService.mensagem("Cliente adicionado com sucesso!")
+    }
+  })
+}
+
+
+  preencherSelect():void{
     this.cidadeService.findAll().subscribe({
       next: (resposta) => {
         this.cidades = resposta
-        console.log(this.cidades)
       }
     })
   }
 
-  isCPF(): boolean{
-    return this.cpf_cnpj == null ? true : this.cpf_cnpj.length < 12 ? true : false;
- }
- 
- getCpfCnpjMask(): string{
-    return this.isCPF() ? '000.000.000-009' : '00.000.000/0000-00';
- }
+  getMessage(){
+    if(this.nome.invalid){
+      return 'O Campo Nome deve conter entre 3 e 100 caracteres';
+    }
+    if(this.cpfOuCnpj.invalid){
+      return 'O Campo CPF/CNPJ deve conter entre 11 e 14 números';
+    }
+    return false;
+  }
+
+  
 
 }

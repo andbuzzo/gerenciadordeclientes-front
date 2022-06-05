@@ -1,9 +1,9 @@
 <form>
-    <h1>CRIANDO NOVO CLIENTE</h1>
+    <h1>ATUALIZAR CLIENTE</h1>
 
 
     <mat-tab-group mat-align-tabs="center">
-        <mat-tab label="Dados Pessoais">
+        <mat-tab label="Dados Pessoais" class="tabDP">
             <mat-form-field class="form">
                 <mat-label>NOME</mat-label>
                 <input matInput [(ngModel)]="cliente.nome" required [formControl]="nome" type="text" name="nome" placeholder="Digite o nome">
@@ -14,6 +14,7 @@
                 <input matInput [(ngModel)]="cliente.cpfOuCnpj" required [formControl]="cpfOuCnpj" name="cpfOuCnpj" type="text" mask="000.000.000-00||00.000.000/0000-00" placeholder="Digite o CPF ou CNPJ">
                 <mat-error *ngIf="cpfOuCnpj.invalid">{{ getMessage() }}</mat-error>
             </mat-form-field>
+
         </mat-tab>
         <mat-tab label="Dados de Contato">
             <mat-form-field class="form">
@@ -40,8 +41,8 @@
                     {{cidade.nome}}
                   </mat-option>
                 </mat-select>
+                
               </mat-form-field>
-              <p>{{cidades}}</p>
               <mat-form-field class="form">
                 <mat-label>TELEFONE</mat-label>
                 <input matInput [(ngModel)]="cliente.telefone" type="text" name="telefone" mask="(00)00000-0000" placeholder="Digite o telefone">
@@ -56,7 +57,8 @@
       </mat-tab-group>
 
     <div class="buttons">
-        <button [disabled]="getMessage()" class="mat-elevation-z8" (click)="create()" mat-stroked-button color="primary">CRIAR</button>
+        <button [disabled]="getMessage()" class="mat-elevation-z8" (click)="update()" mat-stroked-button color="primary">ATUALIZAR</button>
+        <button class="mat-elevation-z8" (click)="ativarDesativarCliente()"  mat-stroked-button color="warn">{{btnAtivaDesativa}}</button>
         <button class="mat-elevation-z8"  mat-stroked-button color="warn">CANCELAR</button>
     </div>
 

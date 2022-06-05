@@ -42,3 +42,12 @@ button {
     width: 5rem;
 }
 
+.btnPesquisar{
+    margin-left: 2rem;
+}
+
+.lupa {
+    color: rgb(81, 88, 116);
+    vertical-align: middle;
+    
+}

@@ -11,12 +11,17 @@ import { ClienteService } from '../cliente.service';
 export class ClienteReadComponent implements OnInit {
 
   displayedColumns: string[] = ['id', 'cpfOuCnpj', 'nome', 'acoes'];
+  cpfOuCnpj : String =''
+  pesquisa: String =''
 
   clientes: Cliente[] =[]
+
+  private cliente!: Cliente;
 
   constructor( private clienteService: ClienteService, private activedRoute: ActivatedRoute, private router:Router) { }
 
   ngOnInit(): void {
+    this.cpfOuCnpj = this.activedRoute.snapshot.paramMap.get('cpfOuCnpj')!
      this.findAll()
   }
 
@@ -24,7 +29,6 @@ export class ClienteReadComponent implements OnInit {
     this.clienteService.findAll().subscribe({
       next: (resposta)=>{
         this.clientes = resposta;
-        console.log(this.clientes)
       }
     })
   }
@@ -33,4 +37,16 @@ export class ClienteReadComponent implements OnInit {
     this.router.navigate(['clientes/create'])
   }
 
+  navegarParaPesquisarCliente():void{
+    this.router.navigate([`clientes/read/${this.pesquisa}`])
+  }
+
+  findByCpfOuCnpj():void{
+    this.clienteService.findByCpfouCnpj(this.cpfOuCnpj).subscribe({
+      next:(resposta)=>{
+        this.cliente = resposta
+      }
+    })
+  }
+  
 }

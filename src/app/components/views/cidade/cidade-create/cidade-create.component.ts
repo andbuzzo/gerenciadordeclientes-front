@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Cidade } from '../cidade.model';
 import { CidadeService } from '../cidade.service';
@@ -14,6 +15,9 @@ export class CidadeCreateComponent implements OnInit {
     nome: '',
     uf:''
   }
+
+  nome = new FormControl('', [Validators.minLength(5), Validators.maxLength(100)])
+  uf = new FormControl('', [Validators.minLength(2),Validators.maxLength(2)])
 
   constructor(private service: CidadeService, private router: Router) { }
 
@@ -33,6 +37,16 @@ export class CidadeCreateComponent implements OnInit {
 
   cancel():void{
     this.router.navigate(['cidades'])
+  }
+
+  getMessage(){
+    if(this.nome.invalid){
+      return 'O Campo Nome deve conter entre 3 e 100 caracteres';
+    }
+    if(this.uf.invalid){
+      return 'O Campo UF deve conter exatamente 2 caracteres';
+    }
+    return false;
   }
 
 }
