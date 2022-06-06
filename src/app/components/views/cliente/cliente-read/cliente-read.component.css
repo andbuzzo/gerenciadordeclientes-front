@@ -18,6 +18,7 @@
 
 button {
     margin-bottom: .8rem;
+    margin-left: 0.5rem;
 }
 
 .btnDesativados {
@@ -54,4 +55,8 @@ button {
     color: rgb(81, 88, 116);
     vertical-align: middle;
     
+}
+
+.btnDesativados{
+    margin-left: 0.5rem;
 }

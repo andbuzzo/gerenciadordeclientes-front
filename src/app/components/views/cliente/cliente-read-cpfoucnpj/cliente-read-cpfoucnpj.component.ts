@@ -42,8 +42,12 @@ export class ClienteReadCpfoucnpjComponent implements OnInit {
 
   ngOnInit(): void {
    
+    
     this.cpfOuCnpj = this.activadedRouter.snapshot.paramMap.get('cpfOuCnpj')!
     this.findByCpfOuCnpj();
+
+    
+    this.buscaNomeCidade();
   
   }
 
