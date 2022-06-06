@@ -38,6 +38,7 @@ export class CidadeUpdateComponent implements OnInit {
   }
 
   update():void{
+   
     this.service.update(this.cidade).subscribe({
       next: () => this.route.navigate(['cidades']),
       complete: () => this.service.mensagem('Cidade atualizada com sucesso'),

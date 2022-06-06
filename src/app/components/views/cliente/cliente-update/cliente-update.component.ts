@@ -6,6 +6,8 @@ import { Cidade } from '../../cidade/cidade.model';
 import { CidadeService } from '../../cidade/cidade.service';
 import { Cliente } from '../Cliente.model';
 import { ClienteService } from '../cliente.service';
+import { validate, format, generate } from 'cnpj';
+
 
 @Component({
   selector: 'app-cliente-update',
@@ -48,11 +50,15 @@ export class ClienteUpdateComponent implements OnInit {
   }
 
   update():void{
+    if(this.clienteService.isValidCPF(this.cliente.cpfOuCnpj) == true || validate(this.cliente.cpfOuCnpj) == true){
     this.clienteService.update(this.cliente).subscribe({
       next: () => this.router.navigate(['clientes']),
       complete: () => this.clienteService.mensagem('Cliente atualizado com sucesso'),
       error: () => this.clienteService.mensagem('Erro ao tentar atualizar o cliente, tente novamente mais tarde!')
     })
+  }else{
+    this.clienteService.mensagem("CPF ou CNPJ inválido!!")
+  }
   }
 
   findById():void {
